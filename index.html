@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Sprouts Daycare MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Static MVP</p>
+      <h1>Little Sprouts Daycare</h1>
+      <p class="subtitle">A lightweight dashboard for attendance, parent contacts, and daily notes.</p>
+    </div>
+    <div class="date-pill" id="todayLabel"></div>
+  </header>
+
+  <main class="layout">
+    <section class="summary-grid" aria-label="Daily summary">
+      <article class="summary-card">
+        <span class="summary-label">Present</span>
+        <strong id="presentCount">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Absent</span>
+        <strong id="absentCount">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Pending Pickup</span>
+        <strong id="pickupCount">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Daily Notes</span>
+        <strong id="noteCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel roster-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Classroom</p>
+          <h2>Child Roster</h2>
+        </div>
+        <button class="secondary-button" id="resetButton">Reset Demo</button>
+      </div>
+      <div class="child-list" id="childList"></div>
+    </section>
+
+    <aside class="panel details-panel">
+      <p class="eyebrow">Selected Child</p>
+      <h2 id="selectedName">Select a child</h2>
+      <p id="selectedStatus" class="status-text">Choose a child from the roster to view details.</p>
+
+      <div class="detail-block">
+        <h3>Parent Contacts</h3>
+        <div id="contactDetails" class="muted">No child selected.</div>
+      </div>
+
+      <div class="detail-block">
+        <h3>Add Daily Note</h3>
+        <textarea id="noteInput" rows="4" placeholder="Lunch, nap, mood, activities, supplies needed..."></textarea>
+        <button id="addNoteButton" class="primary-button">Add Note</button>
+      </div>
+    </aside>
+
+    <section class="panel notes-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Today</p>
+          <h2>Daily Activity Log</h2>
+        </div>
+      </div>
+      <ul id="activityLog" class="activity-log"></ul>
+    </section>
+
+    <section class="panel report-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Report</p>
+          <h2>Attendance Snapshot</h2>
+        </div>
+      </div>
+      <div id="attendanceReport" class="report-grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
